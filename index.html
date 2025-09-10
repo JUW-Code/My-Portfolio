@@ -1,46 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Juw-Code</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Juwon-Code</title>
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    /* Header */
+    .header {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+    }
+
+    .header p {
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .header-body {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .header-body li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.3s;
+    }
+
+    .header-body li a:hover {
+      color: #ff9800;
+    }
+
+    /* Projects */
+    .projects {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .projects h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .project-card img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-card a {
+      color: #111;
+      font-weight: bold;
+      margin: 0 5px;
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      color: #ff9800;
+    }
+
+    /* About */
+    .about {
+      padding: 2rem;
+      background: #fff;
+      margin: 2rem auto;
+      max-width: 900px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .about h2 {
+      margin-bottom: 1rem;
+    }
+
+    .about ul {
+      list-style: square;
+      margin-left: 20px;
+    }
+
+    /* Footer */
+    .footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .footer .social-links {
+      margin: 1rem 0;
+    }
+
+    .footer .social-links a {
+      color: #ff9800;
+      margin: 0 15px;
+      font-size: 1.5rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .footer .social-links a:hover {
+      color: #fff;
+      transform: scale(1.2);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Juw-Code Portfolio</h1>
-        <p>Front-End Developer in Progress 🚀</p>
-    </header>
+  <!-- Header -->
+  <header class="header">
+    <h1>Juwon-Code Portfolio</h1>
+    <p>Front-End Developer in Progress 🚀</p>
+    <ul class="header-body">
+      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+      <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </header>
 
-    <section class="projects">
-        <h2>Projects</h2>
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
 
-        <div class="project-card">
-            <img src="images/Frontend Mentor _ Recipe page and 1 more page - Personal - Microsoft​ Edge 7_18_2025 3_20_49 PM.png" alt="Recipe Page Project">
-            <h3>Recipe Page</h3>
-            <p>Simple and clean recipe page layout.</p>
-            <a href="https://recipe-page-juw-code.netlify.app" target="_blank">Live Site</a> |
-            <a href="https://github.com/JUW-Code/recipe-page-main" target="_blank">GitHub Repo</a>
-        </div>
+    <div class="project-card">
+      <img src="images/recipe.png" alt="Recipe Page Project">
+      <h3>Recipe Page</h3>
+      <p>Simple and clean recipe page layout.</p>
+      <a href="https://recipe-page-juw-code.netlify.app" target="_blank">Live Site</a> |
+      <a href="https://github.com/JUW-Code/recipe-page-main" target="_blank">GitHub Repo</a>
+      <span>"A Responsive recipe page layout built with HTML and CSS."</span>
+    </div>
 
-        <div class="project-card">
-            <img src="images/Web capture_7-8-2025_63053_127.0.0.1.jpeg" alt="News Homepage Project">
-            <h3>News Homepage</h3>
-            <p>Responsive news site with modern layout.</p>
-            <a href="https://news-homepage-juw-code.netlify.app" target="_blank">Live Site</a> |
-            <a href="https://github.com/JUW-Code/news-homepage-main" target="_blank">GitHub Repo</a>
-        </div>
-         <div class="project-card">
-    <img src="images/Frontend Mentor _ Social proof section - Personal - Microsoft​ Edge 7_24_2025 7_54_36 AM.png" alt="Social Proof Section Project">
-    <h3>Social-Proof-Section-Master</h3>
-    <p>Build a social proof section with testimonials.</p>
-    <a href="https://social-proof-section-master.netlify.app" target="_blank">Live Site</a> |
-    <a href="https://github.com/JUW-Code/social-proof-section-master" target="_blank">GitHub Repo</a>
-</div>
-    </section>
+    <div class="project-card">
+      <img src="images/news-homepage.png" alt="News Homepage Project">
+      <h3>News Homepage</h3>
+      <p>Responsive news site with modern layout.</p>
+      <a href="https://news-homepage-juw-code.netlify.app" target="_blank">Live Site</a> |
+      <a href="https://github.com/JUW-Code/news-homepage-main" target="_blank">GitHub Repo</a>
+    </div>
+
+    <div class="project-card">
+      <img src="images/social-proof.png" alt="Social Proof Section Project">
+      <h3>Social Proof Section</h3>
+      <p>Build a social proof section with testimonials.</p>
+      <a href="#" target="_blank">Live Site</a> |
+      <a href="#" target="_blank">GitHub Repo</a>
+    </div>
+
+    <div class="project-card">
+      <img src="images/codenetwork.png" alt="CodeNetwork Project">
+      <h3>CodeNetwork</h3>
+      <p>Build a social proof section with testimonials.</p>
+      <a href="https://codenetwork-learn.netlify.app/" target="_blank">Live Site</a> |
+      <a href="https://github.com/JUW-Code/Project.git" target="_blank">GitHub Repo</a>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      My name is Olajuwon Quadri Onikosi, and I'm a 21-year-old aspiring Frontend Developer based in Lagos, Nigeria.
+      I specialize in creating responsive, user-friendly websites using HTML, CSS, Bootstrap, GitHub, and JavaScript,
+      and I'm currently expanding my skills by learning React.
+      <br><br>
+      I've always been passionate about technology — ever since I was young, I've dreamed of building websites and working 
+      for major tech companies. I enjoy solving problems, thinking deeply about challenges, and finding practical solutions.
+      <br><br>
+      Beyond coding, I love learning new skills, exploring fresh ideas, and collaborating with ambitious people.
+      My goal is to keep growing as a developer, contribute to impactful projects, and eventually build a career in top tech companies.
+    </p>
+
+    <div>
+      <h2>Key Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Bootstrap</li>
+        <li>JavaScript</li>
+        <li>Git and GitHub</li>
+        <li>Netlify</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <p>Connect with me:</p>
+    <div class="social-links">
+      <a href="https://github.com/JUW-Code" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/your-twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:your-email@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2025 Juwon-Code. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
-
-    <footer>
-        <p>&copy; 2025 Juw-Code. All rights reserved.</p>
-        <p>Follow me on <a href="
