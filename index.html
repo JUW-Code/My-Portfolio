@@ -97,8 +97,6 @@
     .project-card a:hover {
       color: #ff9800;
     }
-
-    /* About */
     .about {
       padding: 2rem;
       background: #fff;
@@ -117,7 +115,6 @@
       margin-left: 20px;
     }
 
-    /* Footer */
     .footer {
       background: #111;
       color: #fff;
@@ -141,10 +138,48 @@
       color: #fff;
       transform: scale(1.2);
     }
+    @media (min-width: 600px) {
+  .projects {
+    gap: 5rem;
+  }
+
+  .project-card {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  
+
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .about {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .header-body {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .projects {
+    padding: 1rem;
+  }
+
+  .about {
+    padding: 1rem;
+  }
+}
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <h1>Juwon-Code Portfolio</h1>
     <p>Front-End Developer in Progress 🚀</p>
@@ -155,18 +190,9 @@
       <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
   </header>
-
-  <!-- Projects -->
   <section id="projects" class="projects">
     <h2>Projects</h2>
-    <div class="project-card">
-      <img src="images/CodeNetwork - Learn Anything Online and 4 more pages - Personal - Microsoft​ Edge 9_10_2025 8_09_13 AM.png" alt="CodeNetwork Project">
-      <h3>CodeNetwork</h3>
-      <p>Build a coding network platform for developers.</p>
-      <a href="https://codenetwork-learn.netlify.app/" target="_blank">Live Site</a> |
-      <a href="https://github.com/JUW-Code/Project.git" target="_blank">GitHub Repo</a>
-    </div>
-    
+
     <div class="project-card">
       <img src="images/Frontend Mentor _ Recipe page and 1 more page - Personal - Microsoft​ Edge 7_18_2025 3_20_49 PM.png" alt="Recipe Page Project">
       <h3>Recipe Page</h3>
@@ -175,6 +201,7 @@
       <a href="https://github.com/JUW-Code/recipe-page-main" target="_blank">GitHub Repo</a>
       <span>"A Responsive recipe page layout built with HTML and CSS."</span>
     </div>
+    <br>
 
     <div class="project-card">
       <img src="images/Web capture_7-8-2025_63053_127.0.0.1.jpeg" alt="News Homepage Project">
@@ -183,19 +210,23 @@
       <a href="https://news-homepage-juw-code.netlify.app" target="_blank">Live Site</a> |
       <a href="https://github.com/JUW-Code/news-homepage-main" target="_blank">GitHub Repo</a>
     </div>
-
+<br>
     <div class="project-card">
       <img src="images/Frontend Mentor _ Social proof section - Personal - Microsoft​ Edge 7_24_2025 7_54_36 AM.png" alt="Social Proof Section Project">
       <h3>Social Proof Section</h3>
       <p>Build a social proof section with testimonials.</p>
       <a href="https://buildsocialproofsection.netlify.app/" target="_blank">Live Site</a> |
-      <a href="https://github.com/JUW-Code/social-proof-section-master.git" target="_blank">GitHub Repo</a>
+      <a href="https://github.com/JUW-Code/social-proof-section" target="_blank">GitHub Repo</a>
     </div>
-
-   
+<br>
+    <div class="project-card">
+      <img src="images/CodeNetwork - Learn Anything Online and 4 more pages - Personal - Microsoft​ Edge 9_10_2025 8_09_13 AM.png" alt="CodeNetwork Project">
+      <h3>CodeNetwork</h3>
+      <p>Built an learning page for series of programming language.</p>
+      <a href="https://codenetwork-learn.netlify.app/" target="_blank">Live Site</a> |
+      <a href="https://github.com/JUW-Code/Project.git" target="_blank">GitHub Repo</a>
+    </div>
   </section>
-
-  <!-- About Me -->
   <section id="about" class="about">
     <h2>About Me</h2>
     <p>
@@ -222,14 +253,12 @@
       </ul>
     </div>
   </section>
-
-  <!-- Footer -->
   <footer id="contact" class="footer">
     <p>Connect with me:</p>
     <div class="social-links">
       <a href="https://github.com/JUW-Code" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://x.com/nina_vibes60?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="mailto:m onikosijuwon6@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:onikosijuwon6-email@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
     <p>&copy; 2025 Juwon-Code. All Rights Reserved.</p>
   </footer>
