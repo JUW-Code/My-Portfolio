@@ -1,409 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Olajuwon Onikosi | Front-end Developer</title>
+  <meta name="description" content="Portfolio of Olajuwon Onikosi, a front-end web developer specializing in responsive design and aspiring React & WordPress development." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      line-height: 1.6;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-
-    /* === HEADER SECTION (Split Layout) === */
-    header {
-      display: flex;
-      min-height: 100vh;
-      width: 100%;
-    }
-
-    .left {
-      flex: 1;
-      background-color: #e5e5e5;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 5rem;
-      position: relative;
-    }
-
-    .left img.logo {
-      width: 40px;
-      margin-bottom: 2rem;
-    }
-
-    .left h3 {
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-
-    .left h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #111;
-    }
-
-    .left p {
-      color: #777;
-      margin-top: 0.3rem;
-      margin-bottom: 2rem;
-    }
-
-    .left .socials {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .left .socials a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 6px;
-      background-color: #dcdcdc;
-      color: #111;
-      text-decoration: none;
-      transition: 0.3s ease;
-      font-size: 1.1rem;
-    }
-
-    .left .socials a:hover {
-      background-color: #111;
-      color: #fff;
-    }
-
-    /* === RIGHT SIDE === */
-    .right {
-      flex: 1;
-      background-color: #000;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    /* === NAVIGATION === */
-    nav {
-      position: absolute;
-      top: 2rem;
-      right: 3rem;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ff9800;
-    }
-
-    .contact-btn {
-      background: #fff;
-      color: #000;
-      padding: 0.5rem 1.2rem;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .contact-btn:hover {
-      background: #ff9800;
-      color: #fff;
-    }
-
-    /* === PROFILE IMAGE === */
-    .profile-img {
-      width: 350px;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px;
-      z-index: 1;
-    }
-
-    /* === PROJECTS SECTION === */
-    .projects {
-      padding: 3rem 1.5rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .projects h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.2rem;
-      color: #111;
-    }
-
-    .project-card {
-      background: #fff;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .project-card img {
-      max-width: 100%;
-      border-radius: 6px;
-      margin-bottom: 0.8rem;
-    }
-
-    .project-card h3 {
-      margin-bottom: 0.5rem;
-    }
-
-    .project-card a {
-      color: #111;
-      font-weight: bold;
-      margin: 0 4px;
-      text-decoration: none;
-    }
-
-    .project-card a:hover {
-      color: #ff9800;
-    }
-
-    /* === ABOUT SECTION === */
-    .about {
-      padding: 2rem;
-      background: #fff;
-      margin: 2rem auto;
-      max-width: 900px;
-      border-radius: 8px;
-      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .about h2 {
-      margin-bottom: 1rem;
-      color: #111;
-    }
-
-    .about p {
-      margin-bottom: 1rem;
-      color: #555;
-    }
-
-    .about ul {
-      list-style: square;
-      margin-left: 20px;
-      columns: 2;
-    }
-
-    /* === FOOTER === */
-    .footer {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .footer .social-links {
-      margin: 1rem 0;
-    }
-
-    .footer .social-links a {
-      color: #ff9800;
-      margin: 0 15px;
-      font-size: 1.5rem;
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    .footer .social-links a:hover {
-      color: #fff;
-      transform: scale(1.2);
-    }
-
-    /* === MOBILE STYLES === */
-    @media (max-width: 900px) {
-      header {
-        flex-direction: column;
-      }
-
-      .left,
-      .right {
-        width: 100%;
-        flex: none;
-        min-height: 60vh;
-        align-items: center;
-        text-align: center;
-      }
-
-      .left {
-        padding: 3rem 2rem;
-        align-items: center;
-      }
-
-      .left .socials {
-        justify-content: center;
-      }
-
-      nav {
-        top: 1.5rem;
-        right: 50%;
-        transform: translateX(50%);
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- ====== HEADER SECTION ====== -->
-  <header>
-    <!-- LEFT SIDE -->
-    <div class="left">
-      <img src="logo.png" alt="Logo" class="logo" />
-      <h3>Hi, I am</h3>
-      <h1>Olajuwon Onikosi</h1>
-      <p>Front-end Developer / UI Designer</p>
-      <div class="socials">
-        <a href="mailto:onikosijuwon6-email@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://github.com/JUW-Code" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
-    </div>
-
-    <!-- RIGHT SIDE -->
-    <div class="right">
-      <nav>
-        <a href="#about">About me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Portfolio</a>
-        <a href="#contact" class="contact-btn">Contact Me</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">JUWON</div>
+      <nav class="main-nav">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
-      <img src="your-photo.png" alt="Profile" class="profile-img" />
     </div>
   </header>
 
-  <!-- ====== PROJECTS SECTION ====== -->
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>Hi, I'm <span class="name">Olajuwon</span>,</h1>
+          <p class="lead">Front-end web developer and aspiring React &amp; WordPress developer.</p>
 
-    <div class="project-card">
-      <img src="./images/Screenshot_6-10-2025_83025_127.0.0.1.jpeg" alt="Room Homepage" />
-      <h3>Room Homepage</h3>
-      <p>Simple and clean landing page built with HTML and CSS.</p>
-      <a href="https://room-homepage-masterlive.netlify.app/" target="_blank">Live Site</a> |
-      <a href="https://github.com/JUW-Code/room-homepage-master" target="_blank">GitHub Repo</a>
+          <div class="cta-row">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-illustration" aria-hidden="true">
+          <!--
+            Place your uploaded image in the folder: ./assets/hero.jpg
+            OR change the src below to the exact filename you have.
+            The developer environment had an uploaded image at:
+            /mnt/data/WhatsApp Image 2025-10-18 at 15.07.24_e24a0253.jpg
+          -->
+          <img src="https://i.pinimg.com/736x/de/ac/bc/deacbc994af99602c7c699e89bc29b98.jpg" alt="Person coding illustration" />
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT PROJECTS -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Recent Projects</h2>
+        <p class="section-sub">A selection of my web development work</p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <img src="https://i.pinimg.com/736x/52/e2/bf/52e2bf6330b8dcdb9e2370928fa94607.jpg" alt="E-commerce preview" />
+            <h3>E-commerce Website</h3>
+            <p class="muted">HTML &amp; CSS</p>
+          </article>
+
+          <article class="project-card">
+            <img src="https://i.pinimg.com/736x/75/94/bf/7594bfe5b2e06caa64e1c307f7573f07.jpg" alt="Portfolio preview" />
+            <h3>Portfolio</h3>
+            <p class="muted">Responsive design</p>
+          </article>
+
+          <article class="project-card">
+            <img src="" alt="Blog preview" />
+            <h3>Blog</h3>
+            <p class="muted">Content site</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>I'm a self-taught frontend developer with a passion for creating responsive and user-friendly websites. Currently, I'm expanding my knowledge by learning React and WordPress development.</p>
+
+          <ul class="about-list">
+            <li>HTML • CSS • JavaScript</li>
+            <li>Bootstrap • Responsive Design</li>
+            <li>Git &amp; GitHub • Netlify</li>
+            <li>React &amp; WordPress (learning)</li>
+          </ul>
+        </div>
+
+        <div class="about-visual" aria-hidden="true">
+          <div class="badge">
+            <i class="fa-solid fa-code"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>Connect with me:</p>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/JUW-Code" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:onikosijuwon6-email@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
     </div>
 
-    <div class="project-card">
-      <img src="images/Web capture_7-8-2025_63053_127.0.0.1.jpeg" alt="News Homepage Project">
-      <h3>News Homepage</h3>
-      <p>Responsive news site built with HTML and CSS.</p>
-      <a href="https://news-homepage-juw-code.netlify.app" target="_blank">Live Site</a> |
-      <a href="https://github.com/JUW-Code/news-homepage-main" target="_blank">GitHub Repo</a>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Olajuwon Onikosi. All Rights Reserved.</p>
     </div>
-
-    <div class="project-card">
-      <img src="./images/Screenshot_15-10-2025_181910_rock-paper-scissors-live.netlify.app.jpeg" alt="Rock Paper Scissors">
-      <h3>Rock Paper Scissors</h3>
-      <p>A simple interactive game built with HTML, CSS, and JavaScript.</p>
-      <a href="https://rock-paper-scissors-live.netlify.app/" target="_blank">Live Site</a> |
-      <a href="https://github.com/JUW-Code" target="_blank">GitHub Repo</a>
-    </div>
-
-    <div class="project-card">
-      <img src="images/CodeNetwork - Learn Anything Online.png" alt="CodeNetwork Project">
-      <h3>CodeNetwork</h3>
-      <p>Learning platform page created with HTML, CSS, Bootstrap and JavaScript.</p>
-      <a href="https://codenetwork-learn.netlify.app/" target="_blank">Live Site</a> |
-      <a href="https://github.com/JUW-Code/Project.git" target="_blank">GitHub Repo</a>
-    </div>
-
-    <div class="project-card">
-      <img src="./images/Screenshot_15-9-2025_181317_astonishing-sorbet-e73504.netlify.app.jpeg" alt="Product Cart List">
-      <h3>Product Cart List</h3>
-      <p>Responsive shopping cart built with HTML, CSS, and JavaScript.</p>
-      <a href="https://productcartlist.netlify.app/" target="_blank">Live Site</a> |
-      <a href="https://github.com/JUW-Code/product-list-with-cart-main.git" target="_blank">GitHub Repo</a>
-    </div>
-
-    <div class="project-card">
-      <img src="./images/Screenshot_22-9-2025_183221_127.0.0.1.jpeg" alt="Intro Section">
-      <h3>Intro Section with Dropdown Navigation</h3>
-      <p>Responsive landing page with dropdown menu built using HTML, CSS, and JavaScript.</p>
-      <a href="https://intro-section-dropdown-basics.netlify.app/" target="_blank">Live Site</a> |
-      <a href="https://github.com/JUW-Code/intro-section-with-dropdown-navigation-main.git" target="_blank">GitHub Repo</a>
-    </div>
-
-    <div class="project-card">
-      <img src="./images/Screenshot_22-9-2025_185840_effervescent-starburst-b8fed0.netlify.app.jpeg" alt="Acme Consulting">
-      <h3>Acme Consulting</h3>
-      <p>Responsive landing page for Acme Consulting built with React.</p>
-      <a href="https://acme-consulting.netlify.app/" target="_blank">Live Site</a> |
-      <a href="https://github.com/JUW-Code/business-website" target="_blank">GitHub Repo</a>
-    </div>
-  </section>
-
-  <!-- ====== ABOUT SECTION ====== -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      My name is Olajuwon Quadri Onikosi, and I'm a 21-year-old aspiring Frontend Developer based in Lagos, Nigeria.
-      I specialize in creating responsive, user-friendly websites using HTML, CSS, Bootstrap, GitHub, and JavaScript,
-      and I'm currently expanding my skills by learning React.
-    </p>
-    <p>
-      I’ve always been passionate about technology — ever since I was young, I've dreamed of building websites and working 
-      for major tech companies. I enjoy solving problems, thinking deeply about challenges, and finding practical solutions.
-      Beyond coding, I love learning new skills, exploring fresh ideas, and collaborating with ambitious people.
-    </p>
-    <p>
-      My goal is to keep growing as a developer, contribute to impactful projects, and eventually build a career in top tech companies.
-    </p>
-
-    <h2 id="skills">Key Skills</h2>
-    <ul>
-      <li>HTML</li><li>CSS</li><li>Bootstrap</li><li>JavaScript</li>
-      <li>Git & GitHub</li><li>Netlify</li><li>React (Learning)</li><li>WordPress (Learning)</li>
-      <li>Responsive Design</li><li>Cross-Browser Compatibility</li>
-      <li>Version Control</li><li>Problem-Solving</li><li>Teamwork</li>
-    </ul>
-  </section>
-
-  <!-- ====== FOOTER SECTION ====== -->
-  <footer id="contact" class="footer">
-    <p>Connect with me:</p>
-    <div class="social-links">
-      <a href="https://github.com/JUW-Code" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://x.com/nina_vibes60?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="mailto:onikosijuwon6-email@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-    <p>&copy; 2025 Juwon-Code. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
