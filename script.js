@@ -1,8 +1,3 @@
-/* =====================================================
-   JUWON PORTFOLIO — script.js
-   ===================================================== */
-
-/* ─── Typewriter Effect ─── */
 const phrases = [
   'Web Developer.',
   'Node.js & MongoDB.',
@@ -34,8 +29,6 @@ function type() {
 }
 document.addEventListener('DOMContentLoaded', () => setTimeout(type, 800));
 
-
-/* ─── Cursor Glow ─── */
 const cursorGlow = document.getElementById('cursorGlow');
 document.addEventListener('mousemove', (e) => {
   if (cursorGlow) {
@@ -44,29 +37,21 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
-
-/* ─── Sticky Nav + Back-to-Top ─── */
 const header    = document.getElementById('siteHeader');
 const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
 
-  // Sticky nav glass
   if (header) header.classList.toggle('scrolled', y > 40);
 
-  // Back-to-top
   if (backToTop) backToTop.classList.toggle('visible', y > 400);
 
-  // Active nav link
   updateActiveNav();
 
-  // Trigger skill bars when skills section scrolls into view
   animateBars();
 });
 
-
-/* ─── Active Nav Highlight ─── */
 const sections = document.querySelectorAll('section[id], footer[id]');
 const navLinks  = document.querySelectorAll('.nav-link');
 
@@ -81,14 +66,11 @@ function updateActiveNav() {
   });
 }
 
-
-/* ─── Scroll Reveal ─── */
 const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        // stagger siblings
         const siblings = entry.target.parentElement
           ? [...entry.target.parentElement.children].filter(el => el.classList.contains('reveal'))
           : [];
@@ -103,8 +85,6 @@ const revealObserver = new IntersectionObserver(
 );
 revealEls.forEach((el) => revealObserver.observe(el));
 
-
-/* ─── Skill Bar Animations ─── */
 let barsAnimated = false;
 function animateBars() {
   if (barsAnimated) return;
@@ -118,11 +98,8 @@ function animateBars() {
     barsAnimated = true;
   }
 }
-// Also trigger on load (in case skills is already in view)
 window.addEventListener('load', animateBars);
 
-
-/* ─── Mobile Menu ─── */
 const hamburger  = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -138,21 +115,16 @@ function closeMobile() {
   document.body.style.overflow = '';
 }
 
-
-/* ─── Back to Top ─── */
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-
-/* ─── Contact Form ─── */
 function handleFormSubmit(e) {
   e.preventDefault();
   const btn     = document.getElementById('sendMessageBtn');
   const success = document.getElementById('formSuccess');
   const form    = document.getElementById('contactForm');
 
-  // Simulate sending
   btn.disabled = true;
   btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
 
@@ -171,8 +143,6 @@ function handleFormSubmit(e) {
   }, 1500);
 }
 
-
-/* ─── Smooth page-load entrance ─── */
 document.addEventListener('DOMContentLoaded', () => {
   document.body.style.opacity = '0';
   document.body.style.transition = 'opacity 0.4s ease';
@@ -180,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.opacity = '1';
   });
 
-  // Immediately reveal hero elements (no observer needed)
   document.querySelectorAll('.hero .reveal').forEach((el, i) => {
     el.style.transitionDelay = (i * 0.15 + 0.2) + 's';
     el.classList.add('visible');

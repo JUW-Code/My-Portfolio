@@ -1,11 +1,4 @@
-/* =====================================================
-   JUWON PORTFOLIO — style.css
-   Dark mode, glassmorphism, micro-animations
-   ===================================================== */
-
-/* ─── CSS Custom Properties ─── */
 :root {
-  /* Colors */
   --bg:          #080c14;
   --bg-2:        #0c1220;
   --bg-3:        #111828;
@@ -13,9 +6,9 @@
   --card-border: rgba(255,255,255,0.08);
   --glass:       rgba(255,255,255,0.05);
 
-  --accent-1:    #6c63ff;   /* Purple */
-  --accent-2:    #00d4aa;   /* Teal */
-  --accent-3:    #ff6b6b;   /* Coral */
+  --accent-1:    #6c63ff;
+  --accent-2:    #00d4aa;
+  --accent-3:    #ff6b6b;
   --accent-grad: linear-gradient(135deg, #6c63ff, #00d4aa);
   --accent-glow: 0 0 40px rgba(108, 99, 255, 0.35);
 
@@ -27,16 +20,13 @@
   --radius-sm:   10px;
   --radius-lg:   24px;
 
-  /* Transitions */
   --ease:        cubic-bezier(0.22, 1, 0.36, 1);
   --t:           0.3s;
 
-  /* Layout */
   --container:   1120px;
   --nav-h:       70px;
 }
 
-/* ─── Reset ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -52,7 +42,6 @@ img { max-width: 100%; display: block; }
 a  { color: inherit; text-decoration: none; }
 button { cursor: pointer; font-family: inherit; border: none; }
 
-/* ─── Cursor Glow ─── */
 .cursor-glow {
   position: fixed;
   width: 400px;
@@ -66,21 +55,16 @@ button { cursor: pointer; font-family: inherit; border: none; }
   will-change: transform;
 }
 
-/* ─── Container ─── */
 .container {
   width: 90%;
   max-width: var(--container);
   margin: 0 auto;
 }
 
-/* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--accent-1); border-radius: 3px; }
 
-/* ─────────────────────────────────────────
-   NAVIGATION
-───────────────────────────────────────── */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -136,7 +120,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .nav-link:hover::after,
 .nav-link.active::after { width: 100%; }
 
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -155,7 +138,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile menu */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -178,9 +160,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 .mobile-nav-link:hover { color: var(--accent-1); }
 
-/* ─────────────────────────────────────────
-   BUTTONS
-───────────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -225,9 +204,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 .btn.full-width { width: 100%; justify-content: center; }
 
-/* ─────────────────────────────────────────
-   SECTION SHARED STYLES
-───────────────────────────────────────── */
 .section-header {
   text-align: center;
   margin-bottom: 56px;
@@ -256,9 +232,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   margin: 0 auto;
 }
 
-/* ─────────────────────────────────────────
-   REVEAL ANIMATIONS
-───────────────────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(32px);
@@ -272,9 +245,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .reveal:nth-child(3) { transition-delay: 0.2s; }
 .reveal:nth-child(4) { transition-delay: 0.3s; }
 
-/* ─────────────────────────────────────────
-   HERO
-───────────────────────────────────────── */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -285,7 +255,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   padding: calc(var(--nav-h) + 48px) 0 80px;
 }
 
-/* Background orbs */
 .orb {
   position: absolute;
   border-radius: 50%;
@@ -328,7 +297,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   z-index: 1;
 }
 
-/* Badge */
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -401,7 +369,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   flex-wrap: wrap;
 }
 
-/* Stats */
 .hero-stats {
   display: flex;
   align-items: center;
@@ -432,7 +399,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   background: var(--card-border);
 }
 
-/* Hero visual */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -490,7 +456,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .profile-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
 .profile-info p  { font-size: 0.78rem; color: var(--text-muted); }
 
-/* Floating tech pills */
 .tech-pill {
   position: absolute;
   background: var(--bg-3);
@@ -517,7 +482,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   50%       { transform: translateY(-8px); }
 }
 
-/* Scroll indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 30px;
@@ -552,9 +516,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   to   { opacity: 1; }
 }
 
-/* ─────────────────────────────────────────
-   ABOUT
-───────────────────────────────────────── */
 .about {
   padding: 100px 0;
   background: var(--bg-2);
@@ -607,7 +568,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 .about-link-btn.secondary:hover { border-color: var(--accent-1); color: var(--accent-1); }
 
-/* Info cards */
 .about-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -641,9 +601,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .info-card h4 { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
 .info-card p  { font-size: 0.95rem; font-weight: 600; color: var(--text); }
 
-/* ─────────────────────────────────────────
-   SKILLS
-───────────────────────────────────────── */
 .skills { padding: 100px 0; }
 
 .skills-grid {
@@ -696,7 +653,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   transition: width 1.2s var(--ease);
 }
 
-/* Tech tags */
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
@@ -721,9 +677,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   background: rgba(108,99,255,0.08);
 }
 
-/* ─────────────────────────────────────────
-   PROJECTS
-───────────────────────────────────────── */
 .projects {
   padding: 100px 0;
   background: var(--bg-2);
@@ -823,9 +776,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   margin-top: 48px;
 }
 
-/* ─────────────────────────────────────────
-   CONTACT
-───────────────────────────────────────── */
 .contact { padding: 100px 0; }
 .contact-grid {
   display: grid;
@@ -887,7 +837,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   color: var(--text);
 }
 
-/* Contact form */
 .contact-form {
   background: var(--card);
   border: 1px solid var(--card-border);
@@ -941,9 +890,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 .form-success.show { display: flex; }
 
-/* ─────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────── */
 .site-footer {
   padding: 32px 0;
   background: var(--bg);
@@ -977,9 +923,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   transform: translateY(-2px);
 }
 
-/* ─────────────────────────────────────────
-   BACK TO TOP
-───────────────────────────────────────── */
 .back-to-top {
   position: fixed;
   bottom: 28px;
@@ -1001,9 +944,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .back-to-top.visible { opacity: 1; pointer-events: auto; }
 .back-to-top:hover { transform: translateY(-3px); }
 
-/* ─────────────────────────────────────────
-   RESPONSIVE
-───────────────────────────────────────── */
 @media (max-width: 1024px) {
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1050,7 +990,6 @@ button { cursor: pointer; font-family: inherit; border: none; }
   .btn { width: 100%; justify-content: center; }
 }
 
-/* ─── Reduced motion ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
