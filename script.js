@@ -1,3 +1,9 @@
+(function() {
+  emailjs.init({
+    publicKey: "YOUR_PUBLIC_KEY",
+  });
+})();
+
 const phrases = [
   'Web Developer.',
   'Node.js & MongoDB.',
@@ -128,19 +134,30 @@ function handleFormSubmit(e) {
   btn.disabled = true;
   btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
 
-  setTimeout(() => {
-    btn.innerHTML = '<i class="fa-solid fa-check"></i> Sent!';
-    btn.style.background = 'linear-gradient(135deg, #00d4aa, #00a885)';
-    success.classList.add('show');
-    form.reset();
+  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#contactForm')
+    .then(() => {
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Sent!';
+      btn.style.background = 'linear-gradient(135deg, #00d4aa, #00a885)';
+      success.classList.add('show');
+      form.reset();
 
-    setTimeout(() => {
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+        btn.style.background = '';
+        success.classList.remove('show');
+      }, 4000);
+    }, (error) => {
+      console.log('FAILED...', error);
+      btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Error';
+      btn.style.background = '#ff4b2b';
       btn.disabled = false;
-      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-      btn.style.background = '';
-      success.classList.remove('show');
-    }, 4000);
-  }, 1500);
+      
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+        btn.style.background = '';
+      }, 4000);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
