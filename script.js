@@ -1,15 +1,19 @@
-(function() {
-  emailjs.init({
-    publicKey: "YOUR_PUBLIC_KEY",
-  });
+/* ============================================================
+   websitebyvolt — script.js
+   ============================================================ */
+
+// ── EmailJS Init ────────────────────────────────────────────
+(function () {
+  emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" });
 })();
 
+// ── Typewriter ──────────────────────────────────────────────
 const phrases = [
-  'Web Developer.',
-  'Node.js & MongoDB.',
-  'React Applications.',
-  'Render & EmailJS.',
-  'Full-stack Solutions.',
+  'Sell for You 24/7.',
+  'Automate Your Business.',
+  'Engage Your Audience.',
+  'Load in Under a Second.',
+  'Grow Your Revenue.',
 ];
 let phraseIdx = 0, charIdx = 0, isDeleting = false;
 const typeEl = document.getElementById('typewriter');
@@ -17,15 +21,13 @@ const typeEl = document.getElementById('typewriter');
 function type() {
   if (!typeEl) return;
   const current = phrases[phraseIdx];
-
   typeEl.textContent = isDeleting
     ? current.slice(0, --charIdx)
     : current.slice(0, ++charIdx);
 
-  let delay = isDeleting ? 60 : 100;
-
+  let delay = isDeleting ? 55 : 95;
   if (!isDeleting && charIdx === current.length) {
-    delay = 1800; isDeleting = true;
+    delay = 2000; isDeleting = true;
   } else if (isDeleting && charIdx === 0) {
     isDeleting = false;
     phraseIdx = (phraseIdx + 1) % phrases.length;
@@ -35,6 +37,7 @@ function type() {
 }
 document.addEventListener('DOMContentLoaded', () => setTimeout(type, 800));
 
+// ── Cursor Glow ─────────────────────────────────────────────
 const cursorGlow = document.getElementById('cursorGlow');
 document.addEventListener('mousemove', (e) => {
   if (cursorGlow) {
@@ -43,22 +46,20 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
+// ── Header Scroll & Back-to-Top ─────────────────────────────
 const header    = document.getElementById('siteHeader');
 const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
-
-  if (header) header.classList.toggle('scrolled', y > 40);
-
+  if (header)    header.classList.toggle('scrolled', y > 40);
   if (backToTop) backToTop.classList.toggle('visible', y > 400);
-
   updateActiveNav();
-
   animateBars();
 });
 
-const sections = document.querySelectorAll('section[id], footer[id]');
+// ── Active Nav Link ─────────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('.nav-link');
 
 function updateActiveNav() {
@@ -72,25 +73,27 @@ function updateActiveNav() {
   });
 }
 
+// ── Scroll Reveal ────────────────────────────────────────────
 const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const siblings = entry.target.parentElement
           ? [...entry.target.parentElement.children].filter(el => el.classList.contains('reveal'))
           : [];
         const idx = siblings.indexOf(entry.target);
-        entry.target.style.transitionDelay = idx * 0.1 + 's';
+        entry.target.style.transitionDelay = (idx * 0.08) + 's';
         entry.target.classList.add('visible');
         revealObserver.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.12 }
+  { threshold: 0.1 }
 );
 revealEls.forEach((el) => revealObserver.observe(el));
 
+// ── Skill Bars ───────────────────────────────────────────────
 let barsAnimated = false;
 function animateBars() {
   if (barsAnimated) return;
@@ -106,6 +109,7 @@ function animateBars() {
 }
 window.addEventListener('load', animateBars);
 
+// ── Mobile Menu ──────────────────────────────────────────────
 const hamburger  = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -121,10 +125,12 @@ function closeMobile() {
   document.body.style.overflow = '';
 }
 
+// ── Back to Top ──────────────────────────────────────────────
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// ── Contact Form ─────────────────────────────────────────────
 function handleFormSubmit(e) {
   e.preventDefault();
   const btn     = document.getElementById('sendMessageBtn');
@@ -137,7 +143,7 @@ function handleFormSubmit(e) {
   emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#contactForm')
     .then(() => {
       btn.innerHTML = '<i class="fa-solid fa-check"></i> Sent!';
-      btn.style.background = 'linear-gradient(135deg, #00d4aa, #00a885)';
+      btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
       success.classList.add('show');
       form.reset();
 
@@ -148,11 +154,11 @@ function handleFormSubmit(e) {
         success.classList.remove('show');
       }, 4000);
     }, (error) => {
-      console.log('FAILED...', error);
-      btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Error';
-      btn.style.background = '#ff4b2b';
+      console.error('EmailJS error:', error);
+      btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Error — Try Again';
+      btn.style.background = '#dc2626';
       btn.disabled = false;
-      
+
       setTimeout(() => {
         btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
         btn.style.background = '';
@@ -160,6 +166,7 @@ function handleFormSubmit(e) {
     });
 }
 
+// ── Page Fade-In & Hero Reveal ───────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   document.body.style.opacity = '0';
   document.body.style.transition = 'opacity 0.4s ease';
@@ -167,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.opacity = '1';
   });
 
+  // Stagger-reveal hero elements immediately
   document.querySelectorAll('.hero .reveal').forEach((el, i) => {
     el.style.transitionDelay = (i * 0.15 + 0.2) + 's';
     el.classList.add('visible');

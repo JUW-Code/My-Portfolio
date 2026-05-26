@@ -4,18 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Olajuwon Onikosi | Web Developer</title>
+  <title>websitebyvolt | Web Developer & Digital Builder</title>
   <meta name="description"
-    content="Portfolio of Olajuwon Onikosi — a versatile web developer specializing in Full-stack solutions, React, Node.js, and modern web technologies." />
+    content="websitebyvolt — We build websites that sell for you, even when you sleep. Portfolio of Olajuwon Onikosi, web developer specializing in full-stack solutions, React, Node.js, and modern web technologies." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <link rel="stylesheet" href="style.css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -24,18 +23,23 @@
 
   <div class="cursor-glow" id="cursorGlow"></div>
 
+  <!-- ===== HEADER ===== -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="#home" class="logo" id="logoLink">
-        <span class="logo-bracket">&lt;</span>JUWON<span class="logo-bracket">/&gt;</span>
+        <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">websitebyvolt</span>
       </a>
       <nav class="main-nav" id="mainNav">
-        <a href="#home" class="nav-link" data-nav="home">Home</a>
-        <a href="#about" class="nav-link" data-nav="about">About</a>
-        <a href="#skills" class="nav-link" data-nav="skills">Skills</a>
-        <a href="#projects" class="nav-link" data-nav="projects">Projects</a>
-        <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+        <a href="#home"       class="nav-link" data-nav="home">Home</a>
+        <a href="#about"      class="nav-link" data-nav="about">About</a>
+        <a href="#services"   class="nav-link" data-nav="services">Services</a>
+        <a href="#projects"   class="nav-link" data-nav="projects">Work</a>
+        <a href="#contact"    class="nav-link" data-nav="contact">Contact</a>
       </nav>
+      <a href="#contact" class="btn btn-primary nav-cta" id="navCtaBtn">
+        Start a Project <i class="fa-solid fa-arrow-right"></i>
+      </a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -43,86 +47,99 @@
   </header>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#home" class="mobile-nav-link" onclick="closeMobile()">Home</a>
-    <a href="#about" class="mobile-nav-link" onclick="closeMobile()">About</a>
-    <a href="#skills" class="mobile-nav-link" onclick="closeMobile()">Skills</a>
-    <a href="#projects" class="mobile-nav-link" onclick="closeMobile()">Projects</a>
-    <a href="#contact" class="mobile-nav-link" onclick="closeMobile()">Contact</a>
+    <a href="#home"     class="mobile-nav-link" onclick="closeMobile()">Home</a>
+    <a href="#about"    class="mobile-nav-link" onclick="closeMobile()">About</a>
+    <a href="#services" class="mobile-nav-link" onclick="closeMobile()">Services</a>
+    <a href="#projects" class="mobile-nav-link" onclick="closeMobile()">Work</a>
+    <a href="#contact"  class="mobile-nav-link" onclick="closeMobile()">Contact</a>
+    <a href="#contact"  class="btn btn-primary" onclick="closeMobile()" style="text-align:center;justify-content:center">Start a Project</a>
   </div>
 
   <main>
 
+    <!-- ===== HERO ===== -->
     <section id="home" class="hero">
+      <div class="hero-bg-grid"></div>
       <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
 
-      <div class="container hero-grid">
-        <div class="hero-content reveal">
-          <div class="hero-badge">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-badge reveal">
             <span class="badge-dot"></span>
-            Available for work
+            Available for new projects
           </div>
 
-          <h1 class="hero-title">
-            Hi, I'm<br>
-            <span class="gradient-text" id="heroName">Olajuwon</span>
+          <h1 class="hero-title reveal">
+            We Build Websites<br>
+            that <span id="typewriter" class="gradient-text"></span>
           </h1>
 
-          <p class="hero-role">
-            <span class="role-prefix">I build &rarr; </span>
-            <span class="typewriter" id="typewriter"></span>
-            <span class="cursor-blink">|</span>
+          <p class="hero-desc reveal">
+            Automate your toughest business tasks — from managing orders to attracting customers — all with a smart website that does the heavy lifting.
           </p>
 
-          <p class="hero-desc">
-            Versatile web developer crafting beautiful, functional, and high-performance digital experiences.
-            Self-taught and professionally trained at <strong>HIIT Training Plc</strong>.
-          </p>
-
-          <div class="cta-row">
-            <a href="#projects" class="btn btn-primary" id="viewProjectsBtn">
-              <i class="fa-solid fa-rocket"></i> View Projects
+          <div class="cta-row reveal">
+            <a href="#contact" class="btn btn-primary" id="startProjectBtn">
+              Start Your Project <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <a href="#contact" class="btn btn-ghost" id="getInTouchBtn">
-              <i class="fa-solid fa-paper-plane"></i> Get In Touch
+            <a href="#projects" class="btn btn-ghost" id="seeWorkBtn">
+              <i class="fa-solid fa-play"></i> See Our Work
             </a>
           </div>
 
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-num">10+</span>
-              <span class="stat-label">Projects</span>
+          <div class="social-proof reveal">
+            <div class="proof-avatars">
+              <div class="avatar av1"></div>
+              <div class="avatar av2"></div>
+              <div class="avatar av3"></div>
+              <div class="avatar av4"></div>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-num">2+</span>
-              <span class="stat-label">Years Learning</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-num">5+</span>
-              <span class="stat-label">Technologies</span>
+            <div class="proof-text">
+              <div class="proof-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span>10+ Satisfied Clients in Nigeria and beyond</span>
             </div>
           </div>
         </div>
 
         <div class="hero-visual reveal">
-          <div class="profile-wrapper">
-            <div class="profile-ring"></div>
-            <div class="profile-card">
-              <div class="profile-avatar">
-                <i class="fa-solid fa-code"></i>
+          <div class="hero-card-stack">
+            <div class="floating-card card-main">
+              <div class="card-header">
+                <div class="card-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="card-label">websitebyvolt.dev</span>
               </div>
-              <div class="profile-info">
-                <h3>Olajuwon Onikosi</h3>
-                <p>Web Developer</p>
+              <div class="card-code">
+                <p><span class="code-key">const</span> <span class="code-var">website</span> = {</p>
+                <p class="code-indent"><span class="code-key">name</span>: <span class="code-str">"Your Business"</span>,</p>
+                <p class="code-indent"><span class="code-key">sells</span>: <span class="code-bool">24/7</span>,</p>
+                <p class="code-indent"><span class="code-key">customers</span>: <span class="code-num">∞</span>,</p>
+                <p>};</p>
               </div>
             </div>
-            <div class="tech-pill pill-1"><i class="fa-brands fa-html5"></i> HTML5</div>
-            <div class="tech-pill pill-2"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
-            <div class="tech-pill pill-3"><i class="fa-brands fa-js"></i> JavaScript</div>
-            <div class="tech-pill pill-4"><i class="fa-brands fa-react"></i> React</div>
+            <div class="floating-card card-stat card-stat-1">
+              <i class="fa-solid fa-arrow-trend-up stat-icon"></i>
+              <div>
+                <strong>+240%</strong>
+                <span>Revenue Growth</span>
+              </div>
+            </div>
+            <div class="floating-card card-stat card-stat-2">
+              <i class="fa-solid fa-bolt stat-icon bolt"></i>
+              <div>
+                <strong>0.8s</strong>
+                <span>Page Load Speed</span>
+              </div>
+            </div>
+            <div class="floating-pill pill-html"><i class="fa-brands fa-html5"></i> HTML5</div>
+            <div class="floating-pill pill-js"><i class="fa-brands fa-js"></i> JavaScript</div>
+            <div class="floating-pill pill-react"><i class="fa-brands fa-react"></i> React</div>
           </div>
         </div>
       </div>
@@ -133,201 +150,199 @@
       </div>
     </section>
 
-    <section id="about" class="about">
+    <!-- ===== STATS BAR ===== -->
+    <section class="stats-bar" id="stats">
+      <div class="container stats-inner">
+        <div class="stat-block reveal">
+          <div class="stat-icon-wrap"><i class="fa-solid fa-rocket"></i></div>
+          <div>
+            <strong>Speed</strong>
+            <span>Fast-loading sites, always</span>
+          </div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-block reveal">
+          <div class="stat-icon-wrap"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <strong>10+ Clients</strong>
+            <span>Served across Nigeria</span>
+          </div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-block reveal">
+          <div class="stat-icon-wrap"><i class="fa-solid fa-shield-check"></i></div>
+          <div>
+            <strong>Trust</strong>
+            <span>Built to last &amp; never crash</span>
+          </div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-block reveal">
+          <div class="stat-icon-wrap"><i class="fa-solid fa-star"></i></div>
+          <div>
+            <strong>4.9 Rated</strong>
+            <span>By every client</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY US / BENEFITS ===== -->
+    <section id="about" class="benefits">
       <div class="container">
         <div class="section-header reveal">
+          <span class="section-label">Why Choose Us</span>
+          <h2 class="section-title">What You Get When<br>You Work With <span class="gradient-text">websitebyvolt</span></h2>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card reveal" id="benefitGlobal">
+            <div class="benefit-icon"><i class="fa-solid fa-globe"></i></div>
+            <h3>Sell to Anyone, Anytime, Anywhere</h3>
+            <p>Your business doesn't close anymore. People can place orders from Lagos, Abuja, London or Canada — anytime, day or night.</p>
+          </div>
+          <div class="benefit-card reveal" id="benefitAutomate">
+            <div class="benefit-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3>Automate Your Orders &amp; Save Time</h3>
+            <p>No more "Is this available?" messages. The system handles orders, calculates totals, delivery fees, and sends receipts automatically.</p>
+          </div>
+          <div class="benefit-card reveal" id="benefitShowcase">
+            <div class="benefit-icon"><i class="fa-solid fa-store"></i></div>
+            <h3>Showcase All Your Products in One Place</h3>
+            <p>Let customers browse all your work, check details, and choose what they want — no one-by-one picture sending.</p>
+          </div>
+          <div class="benefit-card reveal" id="benefitTrust">
+            <div class="benefit-icon"><i class="fa-solid fa-badge-check"></i></div>
+            <h3>Get Customers to Trust You Faster</h3>
+            <p>A real website makes your business look professional. Customers take you seriously when they can visit your site, not just DM you.</p>
+          </div>
+          <div class="benefit-card reveal" id="benefitSave">
+            <div class="benefit-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+            <h3>Save on Rent, Staff &amp; Everyday Stress</h3>
+            <p>Skip the expensive shop rent and big staff costs. With a website doing the selling and sorting, you spend less and earn more.</p>
+          </div>
+          <div class="benefit-card reveal" id="benefitMobile">
+            <div class="benefit-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <h3>Clean, Mobile-First Design</h3>
+            <p>Every website is optimized to look stunning and work perfectly on any screen — phone, tablet, or desktop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ME STRIP ===== -->
+    <section class="about-strip">
+      <div class="container about-strip-inner">
+        <div class="about-strip-text reveal">
           <span class="section-label">About Me</span>
-          <h2 class="section-title">Who am I?</h2>
+          <h2 class="section-title">Hi, I'm <span class="gradient-text">Olajuwon</span> —<br>the developer behind websitebyvolt</h2>
+          <p>I'm a <strong>Web Developer</strong> from Nigeria with a deep passion for turning ideas into stunning digital experiences. Self-taught in core frontend technologies and further trained at <strong>HIIT Training Plc</strong>.</p>
+          <p>I believe great code is like great design — clean, purposeful, and satisfying. I specialize in building websites that <span class="highlight">actually work for your business</span>, not just look pretty.</p>
+          <div class="about-cta-row">
+            <a href="https://github.com/JUW-Code" target="_blank" class="btn btn-primary" id="githubProfileBtn">
+              <i class="fa-brands fa-github"></i> View My GitHub
+            </a>
+            <a href="mailto:onikosijuwon6-email@gmail.com" class="btn btn-ghost" id="emailAboutBtn">
+              <i class="fa-solid fa-envelope"></i> Say Hello
+            </a>
+          </div>
         </div>
-
-        <div class="about-grid">
-          <div class="about-text reveal">
-            <p class="about-lead">
-              I'm a <strong>Web Developer</strong> from Nigeria with a deep
-              passion for turning ideas into stunning digital experiences.
-            </p>
-            <p>
-              My journey is a blend of dedicated self-study and professional growth. I am <strong>self-taught</strong>
-              in core frontend technologies and further sharpened my skills through a comprehensive training program at
-              <strong>HIIT Training Plc</strong>.
-            </p>
-            <p>
-              I believe great code is like great design — clean, purposeful, and satisfying.
-              When I'm not coding, I'm exploring new tools and techniques to sharpen my craft.
-            </p>
-
-            <div class="about-links">
-              <a href="https://github.com/JUW-Code" target="_blank" class="about-link-btn" id="githubProfileBtn">
-                <i class="fa-brands fa-github"></i> GitHub Profile
-              </a>
-              <a href="mailto:onikosijuwon6-email@gmail.com" class="about-link-btn secondary" id="emailBtn">
-                <i class="fa-solid fa-envelope"></i> Say Hello
-              </a>
+        <div class="about-strip-cards reveal">
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fa-solid fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>Nigeria 🇳🇬</p>
             </div>
           </div>
-
-          <div class="about-cards reveal">
-            <div class="info-card">
-              <div class="info-card-icon"><i class="fa-solid fa-map-marker-alt"></i></div>
-              <div>
-                <h4>Location</h4>
-                <p>Nigeria</p>
-              </div>
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+              <h4>Learning Path</h4>
+              <p>Self-taught + HIIT Training</p>
             </div>
-            <div class="info-card">
-              <div class="info-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-              <div>
-                <h4>Learning Path</h4>
-                <p>Self-taught & HIIT Training</p>
-              </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div>
+              <h4>Status</h4>
+              <p>Open to Opportunities</p>
             </div>
-            <div class="info-card">
-              <div class="info-card-icon"><i class="fa-solid fa-briefcase"></i></div>
-              <div>
-                <h4>Status</h4>
-                <p>Open to Opportunities</p>
-              </div>
-            </div>
-            <div class="info-card">
-              <div class="info-card-icon"><i class="fa-solid fa-heart"></i></div>
-              <div>
-                <h4>Passion</h4>
-                <p>Clean UI & UX Design</p>
-              </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fa-solid fa-code"></i></div>
+            <div>
+              <h4>Experience</h4>
+              <p>2+ Years Building</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="skills">
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="services">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">What I Know</span>
-          <h2 class="section-title">My Tech Stack</h2>
+          <span class="section-label">Services</span>
+          <h2 class="section-title">Everything Your Business<br>Needs to <span class="gradient-text">Succeed.</span></h2>
+          <p class="section-sub">From website setup to payment integration and SEO — so your business can sell more, run smoother, and grow faster.</p>
         </div>
 
-        <div class="skills-grid">
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title"><i class="fa-solid fa-layer-group"></i> Core Languages</h3>
-            <div class="skill-bars">
-              <div class="skill-bar-item" data-level="92">
-                <div class="skill-label">
-                  <span><i class="fa-brands fa-html5" style="color:#e34f26"></i> HTML5</span>
-                  <span class="skill-pct">92%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-pct="92"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item" data-level="85">
-                <div class="skill-label">
-                  <span><i class="fa-brands fa-css3-alt" style="color:#1572b6"></i> CSS3 / Sass</span>
-                  <span class="skill-pct">85%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-pct="85"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item" data-level="75">
-                <div class="skill-label">
-                  <span><i class="fa-brands fa-js" style="color:#f7df1e"></i> JavaScript</span>
-                  <span class="skill-pct">75%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-pct="75"></div>
-                </div>
-              </div>
-            </div>
+        <div class="services-grid">
+          <div class="service-card reveal" id="serviceEcomm">
+            <div class="service-num">01</div>
+            <div class="service-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            <h3>E-commerce Website Development</h3>
+            <p>Beautiful online stores your customers can shop from — fast, easy, and without stress. Built on modern tech tailored to your business.</p>
+            <a href="#contact" class="service-link">Get started <i class="fa-solid fa-arrow-right"></i></a>
           </div>
-
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title"><i class="fa-solid fa-cubes"></i> Frameworks & Tools</h3>
-            <div class="skill-bars">
-              <div class="skill-bar-item">
-                <div class="skill-label">
-                  <span><i class="fa-brands fa-bootstrap" style="color:#7952b3"></i> Bootstrap</span>
-                  <span class="skill-pct">80%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-pct="80"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-label">
-                  <span><i class="fa-brands fa-react" style="color:#61dafb"></i> React (Learning)</span>
-                  <span class="skill-pct">45%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-pct="45"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item">
-                <div class="skill-label">
-                  <span><i class="fa-brands fa-wordpress" style="color:#21759b"></i> WordPress (Learning)</span>
-                  <span class="skill-pct">40%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-pct="40"></div>
-                </div>
-              </div>
-            </div>
+          <div class="service-card reveal" id="servicePayment">
+            <div class="service-num">02</div>
+            <div class="service-icon"><i class="fa-solid fa-credit-card"></i></div>
+            <h3>Payment Integration</h3>
+            <p>Connect your store to Paystack, Flutterwave, or Stripe — secure, smooth payment systems that your customers can trust.</p>
+            <a href="#contact" class="service-link">Get started <i class="fa-solid fa-arrow-right"></i></a>
           </div>
-
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title"><i class="fa-solid fa-server"></i> Backend & Database</h3>
-            <div class="skill-bars">
-              <div class="skill-bar-item" data-level="70">
-                <div class="skill-label">
-                  <span><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js</span>
-                  <span class="skill-pct">70%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-pct="70"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item" data-level="65">
-                <div class="skill-label">
-                  <span><i class="fa-solid fa-database" style="color:#47a248"></i> MongoDB</span>
-                  <span class="skill-pct">65%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-pct="65"></div>
-                </div>
-              </div>
-              <div class="skill-bar-item" data-level="85">
-                <div class="skill-label">
-                  <span><i class="fa-solid fa-file-code" style="color:#cb3837"></i> NPM & Package.json</span>
-                  <span class="skill-pct">85%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-pct="85"></div>
-                </div>
-              </div>
-            </div>
+          <div class="service-card reveal" id="serviceSEO">
+            <div class="service-num">03</div>
+            <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3>SEO &amp; Google Visibility</h3>
+            <p>Your customers are searching on Google. Let's make sure they find you. Our SEO setup makes your website show up in search results.</p>
+            <a href="#contact" class="service-link">Get started <i class="fa-solid fa-arrow-right"></i></a>
           </div>
-
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title"><i class="fa-solid fa-cloud-arrow-up"></i> Services & Deployment</h3>
-            <div class="tech-tags">
-              <span class="tag"><i class="fa-solid fa-cloudupload"></i> Render</span>
-              <span class="tag"><i class="fa-solid fa-paper-plane"></i> EmailJS</span>
-              <span class="tag"><i class="fa-brands fa-git-alt"></i> Git</span>
-              <span class="tag"><i class="fa-brands fa-github"></i> GitHub</span>
-              <span class="tag"><i class="fa-solid fa-cloud"></i> Netlify</span>
-              <span class="tag"><i class="fa-solid fa-code"></i> VS Code</span>
-            </div>
+          <div class="service-card reveal" id="servicePortfolio">
+            <div class="service-num">04</div>
+            <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+            <h3>Portfolio &amp; Business Websites</h3>
+            <p>Custom-designed websites that represent your brand beautifully — fast, professional, and optimized for conversions.</p>
+            <a href="#contact" class="service-link">Get started <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="service-card reveal" id="serviceSupport">
+            <div class="service-num">05</div>
+            <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>Ongoing Support &amp; Management</h3>
+            <p>Too busy or not techy? No problem. I can help you manage your site, update content, or fix anything that breaks — quickly.</p>
+            <a href="#contact" class="service-link">Get started <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="service-card service-card-featured reveal" id="serviceFullStack">
+            <div class="service-num">06</div>
+            <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3>Full-Stack Web Applications</h3>
+            <p>Need something more powerful? I build complete web apps with React, Node.js, and MongoDB — scalable and production-ready.</p>
+            <a href="#contact" class="service-link">Get started <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ===== PROJECTS / OUR WORK ===== -->
     <section id="projects" class="projects">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">My Work</span>
-          <h2 class="section-title">Recent Projects</h2>
-          <p class="section-sub">A selection of things I've built — each one a new lesson learned.</p>
+          <span class="section-label">Our Work</span>
+          <h2 class="section-title">Projects We're<br><span class="gradient-text">Proud Of.</span></h2>
+          <p class="section-sub">A selection of things I've built — each one a new lesson learned and a client served.</p>
         </div>
 
         <div class="projects-grid">
@@ -336,11 +351,11 @@
             <div class="project-img-wrap">
               <img src="images/jgadget_official.png" alt="JGadget Official Store" loading="lazy" />
               <div class="project-overlay">
-                <a href="https://jgadget-official.netlify.app/" target="_blank" class="overlay-btn"
-                  aria-label="View live site">
+                <a href="https://jgadget-official.netlify.app/" target="_blank" class="overlay-btn" aria-label="View live site">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
               </div>
+              <div class="project-badge">Live</div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -351,7 +366,7 @@
               <h3>JGadget Official Store</h3>
               <p>The official premium gadget store featuring preorders, account management, and a sleek dark theme.</p>
               <a href="https://jgadget-official.netlify.app/" target="_blank" class="project-link">
-                Live Site <i class="fa-solid fa-external-link-alt"></i>
+                View Live Site <i class="fa-solid fa-external-link-alt"></i>
               </a>
             </div>
           </article>
@@ -361,11 +376,11 @@
               <img src="images/Screenshot_15-10-2025_181910_rock-paper-scissors-live.netlify.app.jpeg"
                 alt="Rock Paper Scissors Game" loading="lazy" />
               <div class="project-overlay">
-                <a href="https://rock-paper-scissors-live.netlify.app" target="_blank" class="overlay-btn"
-                  aria-label="View live site">
+                <a href="https://rock-paper-scissors-live.netlify.app" target="_blank" class="overlay-btn" aria-label="View live site">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
               </div>
+              <div class="project-badge">Live</div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -375,11 +390,10 @@
               <h3>Rock Paper Scissors</h3>
               <p>An interactive browser game with animated transitions, score tracking, and responsive design.</p>
               <a href="https://rock-paper-scissors-live.netlify.app" target="_blank" class="project-link">
-                Live Site <i class="fa-solid fa-external-link-alt"></i>
+                View Live Site <i class="fa-solid fa-external-link-alt"></i>
               </a>
             </div>
           </article>
-
 
           <article class="project-card reveal" id="projectCodeNetwork">
             <div class="project-img-wrap">
@@ -387,10 +401,11 @@
                 src="images/CodeNetwork - Learn Anything Online and 4 more pages - Personal - Microsoft​ Edge 9_10_2025 8_09_13 AM.png"
                 alt="CodeNetwork Learning Platform" loading="lazy" />
               <div class="project-overlay">
-                <a href="#" target="_blank" class="overlay-btn" aria-label="View live site">
+                <a href="https://codenetwork-learn.netlify.app/" target="_blank" class="overlay-btn" aria-label="View live site">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
               </div>
+              <div class="project-badge">Live</div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -400,8 +415,8 @@
               </div>
               <h3>CodeNetwork</h3>
               <p>An online learning platform UI with course browsing, a clean dashboard, and interactive elements.</p>
-              <a href="https://codenetwork-learn.netlify.app/" class="project-link" aria-label="View live site">
-                live site <i class="fa-solid fa-external-link-alt"></i>
+              <a href="https://codenetwork-learn.netlify.app/" class="project-link">
+                View Live Site <i class="fa-solid fa-external-link-alt"></i>
               </a>
             </div>
           </article>
@@ -415,6 +430,7 @@
                   <i class="fa-solid fa-star"></i>
                 </a>
               </div>
+              <div class="project-badge badge-current">This Site</div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -423,7 +439,7 @@
                 <span class="tag-sm">JavaScript</span>
               </div>
               <h3>Personal Portfolio</h3>
-              <p>This very site — designed and built from scratch to showcase my work, skills, and journey.</p>
+              <p>This very site — designed and built from scratch to showcase my work, skills, and journey as a developer.</p>
               <a href="#home" class="project-link">
                 You're Here <i class="fa-solid fa-location-dot"></i>
               </a>
@@ -440,19 +456,196 @@
       </div>
     </section>
 
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Tech Stack</span>
+          <h2 class="section-title">Tools I Use to<br><span class="gradient-text">Build Great Things.</span></h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title"><i class="fa-solid fa-layer-group"></i> Core Languages</h3>
+            <div class="skill-bars">
+              <div class="skill-bar-item" data-level="92">
+                <div class="skill-label">
+                  <span><i class="fa-brands fa-html5" style="color:#e34f26"></i> HTML5</span>
+                  <span class="skill-pct">92%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-pct="92"></div></div>
+              </div>
+              <div class="skill-bar-item" data-level="85">
+                <div class="skill-label">
+                  <span><i class="fa-brands fa-css3-alt" style="color:#1572b6"></i> CSS3 / Sass</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-pct="85"></div></div>
+              </div>
+              <div class="skill-bar-item" data-level="75">
+                <div class="skill-label">
+                  <span><i class="fa-brands fa-js" style="color:#f7df1e"></i> JavaScript</span>
+                  <span class="skill-pct">75%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-pct="75"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title"><i class="fa-solid fa-cubes"></i> Frameworks &amp; Tools</h3>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-label">
+                  <span><i class="fa-brands fa-bootstrap" style="color:#7952b3"></i> Bootstrap</span>
+                  <span class="skill-pct">80%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-pct="80"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-label">
+                  <span><i class="fa-brands fa-react" style="color:#61dafb"></i> React</span>
+                  <span class="skill-pct">45%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-pct="45"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-label">
+                  <span><i class="fa-brands fa-wordpress" style="color:#21759b"></i> WordPress</span>
+                  <span class="skill-pct">40%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-pct="40"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title"><i class="fa-solid fa-server"></i> Backend &amp; Database</h3>
+            <div class="skill-bars">
+              <div class="skill-bar-item" data-level="70">
+                <div class="skill-label">
+                  <span><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js</span>
+                  <span class="skill-pct">70%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-pct="70"></div></div>
+              </div>
+              <div class="skill-bar-item" data-level="65">
+                <div class="skill-label">
+                  <span><i class="fa-solid fa-database" style="color:#47a248"></i> MongoDB</span>
+                  <span class="skill-pct">65%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-pct="65"></div></div>
+              </div>
+              <div class="skill-bar-item" data-level="85">
+                <div class="skill-label">
+                  <span><i class="fa-solid fa-file-code" style="color:#cb3837"></i> NPM &amp; Packages</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-pct="85"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title"><i class="fa-solid fa-cloud-arrow-up"></i> Deployment &amp; Services</h3>
+            <div class="tech-tags">
+              <span class="tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span class="tag"><i class="fa-brands fa-github"></i> GitHub</span>
+              <span class="tag"><i class="fa-solid fa-cloud"></i> Netlify</span>
+              <span class="tag"><i class="fa-solid fa-server"></i> Render</span>
+              <span class="tag"><i class="fa-solid fa-paper-plane"></i> EmailJS</span>
+              <span class="tag"><i class="fa-solid fa-code"></i> VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL / SUCCESS STORIES ===== -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Client Success Stories</span>
+          <h2 class="section-title">What We're<br><span class="gradient-text">Known For.</span></h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card card-featured reveal" id="testimonialMain">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+            <p class="quote-text">"I finally feel proud to send customers to my website. The speed, the design, the way it actually gets me orders — I love it!"</p>
+            <div class="quote-author">
+              <div class="author-avatar av-a"></div>
+              <div>
+                <strong>Business Owner</strong>
+                <span>Lagos, Nigeria</span>
+              </div>
+              <div class="quote-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="what-known-grid">
+            <div class="known-card reveal" id="knownCrash">
+              <div class="known-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h4>Websites That Never Crash</h4>
+              <p>Sites handle heavy traffic without slowing down — even during flash sales or high-volume events.</p>
+            </div>
+            <div class="known-card reveal" id="knownEasy">
+              <div class="known-icon"><i class="fa-solid fa-hand-pointer"></i></div>
+              <h4>Easy-to-Use</h4>
+              <p>I train you to update products, change images, and manage orders — no stress.</p>
+            </div>
+            <div class="known-card reveal" id="knownFast">
+              <div class="known-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+              <h4>Fast Turnaround</h4>
+              <p>Delivered on time — and stays in touch. No long silences or abandoned projects.</p>
+            </div>
+            <div class="known-card reveal" id="knownSupport">
+              <div class="known-icon"><i class="fa-solid fa-comments"></i></div>
+              <h4>Quality Support</h4>
+              <p>Easy to reach. I actually respond. And I care deeply about your results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+      <div class="cta-banner-bg"></div>
+      <div class="container cta-banner-inner reveal">
+        <div class="cta-banner-text">
+          <span class="section-label">Ready to Start?</span>
+          <h2>Join 10+ business owners who've<br>grown with <span class="gradient-text">websitebyvolt.</span></h2>
+          <p>You've seen what we've done for others. Now it's your turn. Let's create a site that looks great, runs smooth, and sells — even while you sleep.</p>
+        </div>
+        <div class="cta-banner-btns">
+          <a href="#contact" class="btn btn-primary btn-xl" id="ctaBannerStart">
+            Start Your Project <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#projects" class="btn btn-ghost btn-xl" id="ctaBannerWork">
+            <i class="fa-solid fa-briefcase"></i> See Our Work
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
     <section id="contact" class="contact">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">Get In Touch</span>
-          <h2 class="section-title">Let's Work Together</h2>
-          <p class="section-sub">Have a project in mind? I'd love to hear about it.</p>
+          <h2 class="section-title">Let's Build Something<br><span class="gradient-text">Amazing Together.</span></h2>
+          <p class="section-sub">Have a project in mind? Drop me a message and let's talk.</p>
         </div>
 
         <div class="contact-grid">
           <div class="contact-info reveal">
             <h3>Open to collaborations, freelance work, and new opportunities.</h3>
-            <p>Whether you need a website built from scratch, want to fix something that isn't working, or just want to
-              connect — drop me a message!</p>
+            <p>Whether you need a website built from scratch, want to fix something that isn't working, or just want to connect — drop me a message!</p>
 
             <div class="contact-links">
               <a href="mailto:onikosijuwon6-email@gmail.com" class="contact-link-item" id="contactEmailLink">
@@ -506,23 +699,63 @@
 
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <a href="#home" class="footer-logo">
-        <span class="logo-bracket">&lt;</span>JUWON<span class="logo-bracket">/&gt;</span>
-      </a>
-      <p class="footer-copy">&copy; 2025 Olajuwon Onikosi. All Rights Reserved.</p>
-      <div class="socials">
-        <a href="https://github.com/JUW-Code" target="_blank" aria-label="GitHub" class="social-icon" id="footerGithub">
-          <i class="fa-brands fa-github"></i>
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="logo footer-logo">
+          <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+          <span class="logo-text">websitebyvolt</span>
         </a>
-        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn" class="social-icon"
-          id="footerLinkedin">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-        <a href="mailto:onikosijuwon6-email@gmail.com" aria-label="Email" class="social-icon" id="footerEmail">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
+        <p>We build websites that sell for you — even when you sleep. Based in Nigeria, building for the world.</p>
+        <div class="socials">
+          <a href="https://github.com/JUW-Code" target="_blank" aria-label="GitHub" class="social-icon" id="footerGithub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn" class="social-icon" id="footerLinkedin">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:onikosijuwon6-email@gmail.com" aria-label="Email" class="social-icon" id="footerEmail">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Our Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">E-commerce Sites</a></li>
+            <li><a href="#services">Payment Integration</a></li>
+            <li><a href="#services">SEO &amp; Visibility</a></li>
+            <li><a href="#services">Ongoing Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Get in Touch</h5>
+          <ul>
+            <li><a href="mailto:onikosijuwon6-email@gmail.com">onikosijuwon6-email<br>@gmail.com</a></li>
+            <li><a href="https://github.com/JUW-Code" target="_blank">github.com/JUW-Code</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">&copy; 2025 websitebyvolt · All Rights Reserved.</p>
+        <p class="footer-built">Built with <i class="fa-solid fa-heart" style="color:#ff4d3a"></i> by Olajuwon Onikosi</p>
       </div>
     </div>
   </footer>
